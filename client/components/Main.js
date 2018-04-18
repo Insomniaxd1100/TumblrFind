@@ -40,35 +40,40 @@ export default class Main extends Component {
     }
     return (
         <div className="container">
-          <div className="title"> 
-            <img className="loogo1" src="/button2.png" />
-            <h1 className="h1"> Search Your Tag Image </h1>
-            <img className="loogo1" src="/button2.png" />
-          </div>
-          <form className="form" onSubmit={this.handleSubmit}>
-            <div className="labelinput">
-              <label className="label"> Tag </label>     
-              <input className="input" type="text" onChange={this.handleChange} placeholder="Name"/>
+          
+            <div className="title"> 
+              <img className="loogo1" src="/button2.png" />
+              <h1 className="h1"> Search Your Tag Image </h1>
+              <img className="loogo1" src="/button2.png" />
             </div>
-           
-            <button type="submit" className="button"> Search </button>
-          </form>
+            <form className="form" onSubmit={this.handleSubmit}>
+              <div className="labelinput">
+                <label className="label"> Tag </label>     
+                <input className="input" type="text" onChange={this.handleChange} placeholder="Name"/>
+              </div>
+             
+              <button type="submit" className="button"> Search </button>
+            </form>
+          
           <div>
             {
               (informations.length > 0) ? <div className="result3">
+                  <h1 className="posts">{this.state.tag}</h1>
+                  <div className="result1">
                   {
                     informations.map((info, index) => {
                       return (
                         <div key={index} className="result2">
-                          <img className="imageList" src={info.photos[0]["alt_sizes"][1]["url"]} />
+                          <a href={info.post_url} target="_blank"><img className="imageList" src={info.photos[0]["alt_sizes"][1]["url"]} /></a>
+                          <h3 className="name">Blog name : { info["blog_name"] }</h3>
                         </div>
                       )
                     })
                   }
+                  </div>
                 </div> : <h1 />
             }
           </div>
-                
         </div>
     )
   }

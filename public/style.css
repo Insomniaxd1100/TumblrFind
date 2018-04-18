@@ -13,6 +13,13 @@ body {
   flex-direction: column;
 }
 
+.formPage{
+	display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #3e1717;
+}
+
 .title{
   display: flex;
   justify-content: center;
@@ -80,7 +87,30 @@ body {
   color: light blue;
 }
 
-.singer{
+.result3{
+  background-color: #3e1717;
+}
+
+.result1{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.result2{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-left: 12px;
+  margin-right: 12px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.posts{
   font-size: 50px;
   display: flex;
   color: #dacf90;
@@ -88,11 +118,17 @@ body {
   font-family: Optima, sans-serif;
 }
 
-.page-numbers{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  background-color: #3e1717;
+.name{
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 25px;
+  color: #bfae8d;
+}
+
+.imageList{
+	width: 400px;
+	height: 400px;
 }
 
 @media screen and (max-width:959px){
@@ -119,7 +155,3 @@ body {
   }
 }
 
-.imageList{
-	width: 500px;
-	height: 500px;
-}

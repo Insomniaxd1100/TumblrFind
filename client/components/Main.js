@@ -25,18 +25,24 @@ export default class Main extends Component {
     axios.get(`https://api.tumblr.com/v2/tagged?tag=${this.state.tag}&api_key=vmfganE2Y6NoZqI16yr11yxvLigBWuzv1HOdpa6Adp9NRZ4mOX`)
     .then(res => {
       console.log("response", res.data.response)
+      this.setState({data: res.data.response})
     })
   }
   
   render(){
     var information = this.state.data;
-    console.log("see", information)
-    
+    var informations = []
+    if(information.length > 0){
+      console.log("see", information[0].photos[0]["alt_sizes"][0]["url"])
+      var informations = information.filter((i) => {
+        if(i.type == "photo") return i
+      })
+    }
     return (
         <div className="container">
           <div className="title"> 
             <img className="loogo1" src="/button2.png" />
-            <h1 className="h1"> Artistry </h1>
+            <h1 className="h1"> Search Your Tag Image </h1>
             <img className="loogo1" src="/button2.png" />
           </div>
           <form className="form" onSubmit={this.handleSubmit}>
@@ -49,13 +55,13 @@ export default class Main extends Component {
           </form>
           <div>
             {
-              (information.length > 0) ? <div className="result3">
+              (informations.length > 0) ? <div className="result3">
                   {
-                    information.map((info, index) => {
+                    informations.map((info, index) => {
                       return (
-                          <div key={index} className="result2">
-                            <h1>{info["photos"]["0"]}</h1>
-                          </div>
+                        <div key={index} className="result2">
+                          <img className="imageList" src={info.photos[0]["alt_sizes"][1]["url"]} />
+                        </div>
                       )
                     })
                   }

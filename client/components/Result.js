@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+//for lazy loading, I used simple-react-intersection-observer npm module
+import ObserverWrapper from '@emarketeross/simple-react-intersection-observer'
+ 
+
 //Result class is a component that shows the result that user get from api endpoints
 //for pagination, there is a state called currentPage to show current page 
 //Also for how much data to show on one page, there is a state called dataPerPage
@@ -46,6 +50,7 @@ export default class Result extends Component {
 
     return (
         <div className="container">
+          
             {
               (informations.length > 0) ? <div className="result3">
                 <h1 className="posts">{this.props.tag}</h1>
@@ -54,7 +59,9 @@ export default class Result extends Component {
                     currentTodos.map((info, index) => {
                       return (
                         <div key={index} className="result2">
-                          <a href={info.post_url} target="_blank"><img className="imageList" src={info.photos[0]["alt_sizes"][1]["url"]} /></a>
+                          <ObserverWrapper>
+                            <a href={info.post_url} target="_blank"><img className="imageList" src={info.photos[0]["alt_sizes"][1]["url"]} /></a>
+                          </ObserverWrapper>
                           <a className="link" href={info.post_url} target="_blank"><h3 className="name">Blog name : { info["blog_name"] }</h3></a>
                         </div>
                       )

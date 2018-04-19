@@ -15,6 +15,7 @@ export default class Main extends Component {
       data: [],
       loading: false
     }
+    //the event handling function is bind with 'this'. Actually, now in ES6 we don't need to bind any function. It is done itself
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this) 
   }

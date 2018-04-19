@@ -113,6 +113,7 @@ body {
 .posts{
   font-size: 50px;
   display: flex;
+  padding-top: 20px;
   color: #dacf90;
   justify-content: center;
   font-family: Optima, sans-serif;
@@ -126,24 +127,47 @@ body {
   color: #bfae8d;
 }
 
+.link{
+  text-decoration: none;
+}
+
 .imageList{
-	width: 400px;
-	height: 400px;
+	width: 350px;
+	height: 350px;
+}
+
+.page-numbers{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #3e1717;
+}
+
+.page-button{
+  background-color: #f7f7f7;
+  color: #d8b549;
+  margin: 10px;
+  font-size: 16px;
+  height: 30px;
+  width: 30px;
+  border: 1px solid #dedbdb;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+}
+
+.page-button:hover {
+  background-color: black;
+  color: light blue;
 }
 
 @media screen and (max-width:959px){
   .title{
     width: 100%;
     margin: 0;
-    font-size: 25px;
+    font-size: 20px;
   }
     
-  .loogo1{
-    height: 50px;
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-  
   .input {
     height: 35px;
     width: 200px;
@@ -153,5 +177,20 @@ body {
   .label{
     font-size: 20px;
   }
+
+  .imageList{
+    width: 280px;
+    height: 280px;
+  }
+
+  .posts{
+    font-size: 40px;
+    padding-top: 20px;
+  }
+
+  .name{
+    font-size: 20px;
+  }
+
 }
 
